@@ -1,0 +1,115 @@
+main{
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    display:grid;
+    grid-template-areas:"left right";
+    grid-template-columns: 1fr 3fr;
+}
+
+body{   
+    background-color: black;
+    background-size: cover;
+    background-position: center;
+}
+hr{
+    border-top: 1.5px solid black;
+    border-radius: 25px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+.left_side{ grid-area: left;}
+#cat {
+    border: 5px solid;
+    border-color: black;
+    border-radius: 20px;
+    width: 465px;
+    max-height: 400px;
+    margin-top: 1px
+}
+.name_and_shit{
+    background-color: rgb(208, 208, 208);
+    margin-top: 3px;
+    border: 5px solid;
+    border-color: black;
+    border-radius: 20px;
+    text-align: center;
+    line-height: 25px;
+}
+.skills{
+    background-color: rgb(208, 208, 208);
+    margin-top: 3px;
+    text-align: center;
+    line-height: 20px;
+    border: 5px solid;
+    border-color: black;
+    border-radius: 20px;
+}
+.contacts{
+    background-color: rgb(208, 208, 208);
+    margin-top: 3px;
+    text-align: center;
+    line-height: 50px;
+    border: 5px solid;
+    border-color: black;
+    border-radius: 20px;
+}
+.right_side{
+    grid-area: right;
+    background-color: rgb(208, 208, 208);
+    border-radius: 20px;
+    margin-left: 5px;
+    margin-top: 1px}
+.about_me_title{
+    margin-left: 50px;
+    margin-top: 40px;
+}
+.about_me_text{
+    margin-left: 50px;
+    margin-top: 20px;
+    margin-right: 50px;
+    border-bottom: 1.5px solid black;
+}
+.experience_title{
+    margin-left: 50px;
+    margin-top: 20px;
+}
+.experience_text{
+    margin-left: 50px;
+    margin-top: 20px;
+    margin-right: 50px;
+    border-bottom: 1.5px solid black;
+}
+.hobbies_title{
+    margin-left: 50px;
+    margin-top: 20px;
+}
+#joystick {
+    border: 3px solid;
+    border-color: black;
+    border-radius: 20px;
+    width: 150px;
+    max-height: 150px;
+    margin-left: 65px;
+    margin-top: 15px;
+}
+#joystick2 {
+    border: 3px solid;
+    border-color: black;
+    border-radius: 20px;
+    width: 150px;
+    max-height: 150px;
+    margin-left: 50px;
+    margin-top: 15px;
+}
+#joystick3 {
+    border: 3px solid;
+    border-color: black;
+    border-radius: 20px;
+    width: 150px;
+    max-height: 150px;
+    margin-left: 50px;
+    margin-top: 15px;
+}
+
+
+
+
