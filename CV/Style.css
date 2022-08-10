@@ -18,15 +18,17 @@ hr{
 }
 .left_side{ grid-area: left;}
 #cat {
+    object-fit: cover;
     border: 5px solid;
     border-color: black;
     border-radius: 20px;
-    width: 465px;
-    max-height: 400px;
-    margin-top: 1px
+    width: 97.5%;
+    height: auto;
+    margin-top: 1px;
+    
 }
 .name_and_shit{
-    background-color: rgb(208, 208, 208);
+    background-color: rgb(221, 220, 220);
     margin-top: 3px;
     border: 5px solid;
     border-color: black;
@@ -35,7 +37,7 @@ hr{
     line-height: 25px;
 }
 .skills{
-    background-color: rgb(208, 208, 208);
+    background-color: rgb(221, 220, 220);
     margin-top: 3px;
     text-align: center;
     line-height: 20px;
@@ -44,7 +46,7 @@ hr{
     border-radius: 20px;
 }
 .contacts{
-    background-color: rgb(208, 208, 208);
+    background-color: rgb(221, 220, 220);
     margin-top: 3px;
     text-align: center;
     line-height: 50px;
@@ -54,7 +56,7 @@ hr{
 }
 .right_side{
     grid-area: right;
-    background-color: rgb(208, 208, 208);
+    background-color: rgb(221, 220, 220);
     border-radius: 20px;
     margin-left: 5px;
     margin-top: 1px}
@@ -82,34 +84,64 @@ hr{
     margin-left: 50px;
     margin-top: 20px;
 }
+.hobbies_pics{
+    display: flex;
+    flex-direction: column;
+}
 #joystick {
     border: 3px solid;
     border-color: black;
     border-radius: 20px;
-    width: 150px;
-    max-height: 150px;
-    margin-left: 65px;
-    margin-top: 15px;
+    width: 20%;
+    max-height: 350px;
+    margin-left: 9%;
+    margin-top: 35px;
 }
 #joystick2 {
     border: 3px solid;
     border-color: black;
     border-radius: 20px;
-    width: 150px;
-    max-height: 150px;
-    margin-left: 50px;
-    margin-top: 15px;
+    width: 20%;
+    max-height: 350px;
+    margin-left: 9%;
+    margin-top: 35px;
 }
 #joystick3 {
     border: 3px solid;
     border-color: black;
     border-radius: 20px;
-    width: 150px;
-    max-height: 150px;
-    margin-left: 50px;
-    margin-top: 15px;
+    width: 20%;
+    max-height: 350px;
+    margin-left: 9%;
+    margin-top: 35px;
 }
+@media screen and (max-width: 700px) {
+    main{
+        display: flex;
+        flex-direction: column;
+    }
+    #joystick{
+        width: 70%;
+        max-height: 300px;
+        margin-left: 15%;
+        margin-top: 35px;
+    }
+    #joystick2{
+        width: 70%;
+        max-height: 300px;
+        margin-left: 15%;
+        margin-top: 35px;
+    }
+    #joystick3{
+        width: 70%;
+        max-height: 300px;
+        margin-left: 15%;
+        margin-top: 35px;
+        margin-bottom: 35px;
+    }
 
+
+}
 
 
 
