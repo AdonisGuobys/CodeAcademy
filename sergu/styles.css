@@ -40,7 +40,6 @@
     max-width: 8%;
     min-width: 80px;
     min-height: auto;
-    z-index: 10;
   }
   .HomeButton1:hover {
     margin-left: 10px;
@@ -48,7 +47,6 @@
     max-width: 10%;
     min-width: 100px;
     min-height: auto;
-    z-index: 10;
   }
 
   .One , .Two , .Three {
@@ -97,3 +95,11 @@
       left: 5.75%;
       border-radius: 15px;
     }
+    .lists {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-evenly;
+      margin: auto;
+    }
+    
