@@ -7,9 +7,32 @@
   </head>
   <body>
     <main>
-      <section class="Window"></section>
+      <section class="Window">
+        <div class="Bar1">
+            <div class="HomeButton">
+                <img class="HomeButton1" src="./HomeButton.png" onclick='myfunction()'>
+            </div>
+            <button class="One" onclick='myfunction()'>
+                <h1>One</h1>
+            <button class="Two" onclick='myfunction()'>
+                <h1>Two</h1>
+            <button class="Three" onclick='myfunction()'>
+                <h1>Three</h1>
+        </div>
+        <div class="MainPage">
+            <div class="Catalog">
+              <ol class="lists">
+              </ol>
+              <template id="template">
+                  <li class="template-list">
+                      <p class="template-Name"></p>
+                      <p class="template-Price"></p>
+                  </li>
+              </template>
+            </div>
+        </div>
+      </section>
     </main>
-    <div class="Bar1"></div>
-    <div class="Bar2"></div>
+    <script src="./script.js"></script>
   </body>
 </html>
