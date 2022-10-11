@@ -6,12 +6,10 @@ function myfunction() {
   let array = [{
     Name: 'Cat',
     Price: 12,
-
   },
   {
     Name: 'Dog',
     Price: 24
-
   }
 ];
 
