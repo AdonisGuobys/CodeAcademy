@@ -88,6 +88,7 @@ main {
   display: flex;
   background: linear-gradient(to right top, rgba(88, 167, 252, 0.219), rgb(125, 237, 237));
   height: 72%;
+  max-height: 100vh;
   width: 88.5%;
   position:absolute;
   bottom: 6%;
@@ -97,8 +98,21 @@ main {
 .MainPage {
   display: flex;
   flex-wrap: wrap;
-  position: sticky;
-  align-items: center;
+  height: 72%;
+  width: 88.5%;
+  position:absolute;
+  bottom: 6%;
+  left: 5.75%;
   justify-content: space-evenly;
+}
+.MainPage img {
+  display: flex;
+  flex-wrap: wrap;
+  height: 200px;
+}
+.MainPage div {
+border: 5px solid black;
+margin-bottom: 75px;
+margin-top: -55px;
 
 }

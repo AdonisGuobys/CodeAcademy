@@ -86,10 +86,16 @@ const array = [
   }
  ]
 
-const divTag = document.querySelector('.MainPage')
-for (let i = 0; i < array.length; ++i) {
-const imgTag = document.createElement('img')  
-imgTag.setAttribute('src', array[i].Picture)
-divTag.append(array[i].Name, array[i].Price, imgTag)
-}
 
+
+  const divTag = document.querySelector('.MainPage');
+  for (let i = 0; i < array.length; ++i) {
+  productid = document.createElement('div');
+  imgTag = document.createElement('img'); 
+  imgTag.setAttribute('src', array[i].Picture);
+  linkas=document.createElement('a'); 
+  linkas.setAttribute('href', "./index1.html");
+  productid.append(array[i].Name,linkas,array[i].Price);
+  linkas.appendChild(imgTag);
+  divTag.append(productid);
+  }
