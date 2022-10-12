@@ -89,8 +89,6 @@ const array = [
   }
  ]
 
-
-
   const divTag = document.querySelector('.MainPage');
   for (let i = 0; i < array.length; ++i) {
   productid = document.createElement('div');
