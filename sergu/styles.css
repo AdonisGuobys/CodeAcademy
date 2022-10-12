@@ -108,10 +108,11 @@ main {
 .MainPage img {
   display: flex;
   flex-wrap: wrap;
-  height: 200px;
+  max-height: 200px;
 }
 .MainPage div {
-border: 5px solid black;
+border: 5px solid rgb(0, 0, 0);
+border-radius: 15px;
 margin-bottom: 75px;
 margin-top: -55px;
 

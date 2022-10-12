@@ -1,6 +1,9 @@
 function myfunction() {
   alert("Function");
 }
+function myfunction1() {
+  location.href = ("./index.html");
+}
 
 
 const array = [
