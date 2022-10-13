@@ -1,52 +1,38 @@
-const backend = "https://634438fc242c1f347f81b2a1.mockapi.io/products";
+const backend = "https://634827000b382d796c6ac2ea.mockapi.io/api";
 const submitForm = document.querySelector("form");
 
 const postData = async (product) => {
-    const alertMsg = document.getElementById("alert");
-    try {
-        const response = await fetch(END_POINT, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(product),
+    const response = await fetch(backend, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(product),
         });
-        if (response.ok) {
-            alertMsg.innerHTML = "Prekė įkelta sėkmingai!";
-        }
-    } catch (error) {
-        alertMsg.innerHTML = `There was an error!\n${error}`;
-    }
 };
 
 const addProduct = (event) => {
     event.preventDefault();
-    const productNameInput = document.getElementById("product-name");
-    const productPriceInput = document.getElementById("product-price");
-    const productPhotoInput = document.getElementById("product-photo");
-    const productDescriptionInput = document.getElementById("product-description");
-    const productLocationInput = document.getElementById("product-location");
-
+    const newName = document.getElementById("input-name");
+    const newPrice = document.getElementById("input-price");
+    const newPicture = document.getElementById("input-picture");
+    const newInfo = document.getElementById("input-Info");
+    const newLocation = document.getElementById("input-location");
     const product = {
-        name: productNameInput.value,
-        price: productPriceInput.value,
-        avatar: productPhotoInput.value,
-        description: productDescriptionInput.value,
-        location: productLocationInput.value
-
-
-
+        name: newName.value,
+        price: newPrice.value,
+        picture: newPicture.value,
+        info: newInfo.value,
+        location: newLocation.value
     };
     postData(product);
 };
-
 submitForm.addEventListener("submit", addProduct);
 
 function homebutton() {
     location.href = ("./index.html");
   }
-  
-  function add() {
+function add() {
     location.href = ("./index1.html");
   }
   

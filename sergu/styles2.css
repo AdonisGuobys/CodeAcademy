@@ -45,14 +45,3 @@ body{
     min-width: 90px;
     min-height: 90px;
   }
-  #input {
-  display: flex;
-  position: absolute;
-  justify-content: center;
-  background-color: rgba(247, 133, 230, 0.33);
-  left: 35%;
-  right: 35%;
-  top: 115%;
-  border: 2px solid rgba(0, 0, 0, 0.491);
-  border-radius: 15px;
-  }
