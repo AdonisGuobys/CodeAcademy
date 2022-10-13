@@ -1,24 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./productAdd.css">
-    <title>Add product</title>
-</head>
-
-<body>
-    <header>
-        <div class="skelbiu-logo">
-            <img src="https://static.skelbiu.lt/static/images/svg/logotipas_ua.svg?v=4" alt="skelbiu logo">
-
-        </div>
-    </header>
-
-    <section id="input-form">
-        <h1>Norėdami pridėti naują prekę, užpildykite žemiau esančius laukus:</h1>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ecommerce website</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main>
+      <header">
+        <div class="Bar">
+            <img class="HomeButton" src="./HomeButton.png" onclick='homebutton()'>
+            <img class="One" src="./add.png" onclick='add()'>
+      </header>
+    <section id="input">
         <form>
             <label for="productName">Prekės pavadinimas:</label> <br> <br>
             <input id="product-name" type="text" placeholder="pvz.: Darbo stalas" name="productName" /> <br> <br>
@@ -42,6 +36,7 @@
 
 
     <script src="./productAdd.js"></script>
+</main>
 </body>
 
 </html>
