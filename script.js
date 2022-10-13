@@ -1,6 +1,6 @@
-
-const END_POINT = "https://634438fc242c1f347f81b2a1.mockapi.io/products";
-const productsData = {};
+//const backend = "https://6345871839ca915a6901ab38.mockapi.io/api/api/";
+const backend = "https://634438fc242c1f347f81b2a1.mockapi.io/products";
+const apidata = {};
 const productsContainer = document.getElementById("products");
 
 
@@ -10,12 +10,12 @@ const createProduct = (products) => {
     div.classList.add("product-card");
     productsContainer.append(div);
 
+    const productImg = document.createElement("img");
+    productImg.src = products.picture
     const productName = document.createElement("h1");
     productName.innerHTML = products.name;
     const productPrice = document.createElement("h1");
-    productPrice.innerHTML = "Kaina " + products.price + " €";
-    const productImg = document.createElement("img");
-    productImg.src = products.avatar
+    productPrice.innerHTML = products.price + " $";
 
     //button additional info
     const buttonSection = document.createElement("div");
@@ -31,23 +31,14 @@ const createProduct = (products) => {
         window.location.replace("./productinfo.html");
       });
     
-
-
-    div.append(productName, productPrice, productImg, buttonSection)
+    div.append(productName, productImg, productPrice, buttonSection)
     buttonSection.append(button)
 };
 
 const fetchProducts = async () => {
-    try {
-        const response = await fetch(END_POINT);
-        if (response.ok) {
-            productsData.products = await response.json();
-            productsData.products.sort((a, b) => a.price - b.price)
-            productsData.products.forEach((product) => createProduct(product));
-        }
-    } catch (error) {
-        console.error(error);
-    }
+    const response = await fetch(backend);
+        apidata.products = await response.json();
+        apidata.products.sort((a, b) => a.price - b.price)
+        apidata.products.forEach((product) => createProduct(product));
 };
-
 fetchProducts();

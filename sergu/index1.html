@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./productAdd.css">
+    <title>Add product</title>
+</head>
+
+<body>
+    <header>
+        <div class="skelbiu-logo">
+            <img src="https://static.skelbiu.lt/static/images/svg/logotipas_ua.svg?v=4" alt="skelbiu logo">
+
+        </div>
+    </header>
+
+    <section id="input-form">
+        <h1>Norėdami pridėti naują prekę, užpildykite žemiau esančius laukus:</h1>
+        <form>
+            <label for="productName">Prekės pavadinimas:</label> <br> <br>
+            <input id="product-name" type="text" placeholder="pvz.: Darbo stalas" name="productName" /> <br> <br>
+            <label for="productPrice">Prekės kaina eurais:</label> <br> <br>
+            <input id="product-price" type="number" placeholder="pvz.: 20" name="productPrice" /> <br> <br>
+            <label for="productPhoto">Prekės nuotraukos URL:</label> <br> <br>
+            <input id="product-photo" type="text" placeholder="pvz.: https://..." name="productPhoto"> <br> <br>
+            <label for="productDescription">Trumpai aprašykite prekę:</label> <br> <br>
+            <input id="product-description" type="text" placeholder="pvz.: Naujas, medinis" name="productDescription">
+            <br> <br>
+            <label for="productLocation">Įveskite savo miestą:</label> <br> <br>
+            <input id="product-location" type="text" placeholder="pvz.: Vilnius" name="productLocation"> <br> <br>
+            <button id="submit-btn" type="submit">Patvirtinti</button>
+        </form>
+        <br>
+        <br>
+        <br>
+        <a id="back" href="./index.html">Grįžti į pagrindinį puslapį</a>
+        <p id="alert"></p>
+    </section>
+
+
+    <script src="./productAdd.js"></script>
+</body>
+
+</html>

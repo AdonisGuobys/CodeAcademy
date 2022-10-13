@@ -1,23 +1,18 @@
 body {
     width: 80%;
     margin: auto;
-    font-family: 'Open Sans', 'Tahoma', 'Arial', sans-serif;
-    font-size: 12px
 }
 
 #products {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     gap: 15px;
 }
 
 .product-card {
     text-align: center;
-    background-color: white;
     padding: 5px;
-    width: 90%;
-    border: 1px solid  #ffcc01;
-    box-shadow: 1px 2px 2px #ffcc01;
+    border: 1px solid black;
     margin: auto;
 }
 
@@ -32,35 +27,6 @@ header {
     margin: auto;
     margin-bottom: 20px;
     margin-top: 20px;
-}
-
-.skelbiu-logo {
-    display: flex;
-    text-align: center;
-    flex-direction: row;
-}
-
-.skelbiu-logo img {
-    height: 40px;
-    padding-top: 20px;
-}
-
-nav {
-    background-color: #ffcc01;
-    height: 60px;
-    margin-bottom: 20px;
-}
-
-nav a {
-    background-color: #359b07;
-    border-radius: 5px;
-    position: relative;
-    text-decoration: none;
-    color: white;
-    top: 35%;
-    left: 1%;
-    padding: 8px;
-
 }
 
 .button-section {

@@ -1,46 +1,77 @@
-body {
-  background: linear-gradient(to right top, rgba(88, 168, 252), rgb(125, 237, 237));
+body{
+  background: linear-gradient(to right top, rgba(88, 168, 252, 0.676), rgb(125, 237, 237));
 }
-
-.Bar1 {
+main{
+  height: 100vh;
+}
+.Bar {
   display: flex;
-  background: white;
   background: linear-gradient(to right bottom, rgba(255, 183, 101), rgba(255, 222, 114));
   height: 15%;
-  width: 88.5%;
+  width:90%;
+  left: 5%;
   position:absolute;
-  top: 5.8%;
-  left: 5.75%;
-  border-radius: 15px;
   align-items: center;
-  justify-content: space-evenly;
 }
-.HomeButton1 {
-  margin-left: 10px;
-  max-height: 8%;
-  max-width: 8%;
+.HomeButton {
+  position: absolute;
+  margin-left: 20px;
+  max-height: 80%;
+  max-width: 80%;
   min-width: 80px;
-  min-height: auto;
+  min-height: 80px;
 }
-.HomeButton1:hover {
-  max-height: 10%;
-  max-width: 10%;
-  min-width: 100px;
-  min-height: auto;
+.HomeButton:hover {
+  position: absolute;
+  margin-left: 20px;
+  max-height: 90%;
+  max-width: 90%;
+  min-width: 90px;
+  min-height: 90px;
 }
 .One {
-  display: flex;
-  background-color: rgb(60, 251, 57);
-  border: 20px solid rgb(60, 251, 57);
-  border-radius: 25px;
-  margin-right: 10px;
-  justify-content: space-evenly;
+  position: absolute;
+  margin-left: 160px;
+  max-height: 80%;
+  max-width: 80%;
+  min-width: 80px;
+  min-height: 80px;
 }
 .One:hover {
-  display: flex;
-  background-color: rgb(199, 252, 138);
-  border: 20px solid rgb(199, 252, 138);
-  border-radius: 25px;
-  margin-right: 10px;
-  justify-content: space-evenly;
+  margin-left: 160px;
+  max-height: 90%;
+  max-width: 90%;
+  min-width: 90px;
+  min-height: 90px;
 }
+#products {
+  display: flex;
+  flex-wrap: wrap;
+  position: absolute;
+  align-items: center;
+  justify-content: space-evenly;
+  left: 1px;
+  right: 1px;
+  top: 115%;
+}
+.product-card {
+  text-align: center;
+  padding: 5px;
+  border: 1px solid black;
+  margin-right: 1%;
+  margin-bottom: 1%;
+  background-color: rgba(199, 105, 236, 0.527);
+}
+.product-card img {
+  height: 200px;
+  width: 250px;
+}
+.product-card:hover {
+  text-align: center;
+  padding: 5px;
+  border: 1px solid black;
+  margin-right: 1%;
+  margin-bottom: 1%;
+  background-color: rgba(197, 236, 105, 0.596);
+}
+/* Robertai, as hoverinu produkta ir mygtukas irgi hoverina??????*/

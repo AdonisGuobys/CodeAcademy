@@ -1,57 +1,52 @@
-const backend = "https://6345871839ca915a6901ab38.mockapi.io/api/api/";
-const api = {};
-const productContainer = document.getElementsByClassName("products");
-
-const createProduct = (products) => {
-  const div = document.createElement("div");
-  div.classList.add("product-card");
-  productContainer.append(div);
-
-  const productName = document.createElement("h1");
-  productName.innerHTML = products.name;
-  const productPrice = document.createElement("h1");
-  productPrice.innerHTML = "Kaina " + products.price + " €";
-  const productImg = document.createElement("img");
-  productImg.src = products.avatar
-
-  //button additional info
-  const buttonSection = document.createElement("div");
-  buttonSection.classList.add("button-section");
-
-  const button = document.createElement("button");
-  button.classList.add("button");
-  button.innerHTML = "Daugiau info"
-  //local storage
-
-  button.addEventListener("click", () => {
-      localStorage.setItem("destinationId", products.id);
-      window.location.replace("./productinfo.html");
-    });
-  
-
-
-  div.append(productName, productPrice, productImg, buttonSection)
-  buttonSection.append(button)
-};
+//const backend = "https://6345871839ca915a6901ab38.mockapi.io/api/api/";
+const backend = "https://634438fc242c1f347f81b2a1.mockapi.io/products";
+const apidata = {};
+const productsContainer = document.getElementById("products");
 
 const fetchProducts = async () => {
-  try {
-      const response = await fetch(backend);
-      if (response.ok) {
-          productsData.products = await response.json();
-          productsData.products.sort((a, b) => a.price - b.price)
-          productsData.products.forEach((product) => createProduct(product));
-      }
-  } catch (error) {
-      console.error(error);
-  }
+  const response = await fetch(backend);
+      apidata.products = await response.json();
+      apidata.products.sort((a, b) => a.price - b.price)
+      apidata.products.forEach((product) => createProduct(product));
 };
-
 fetchProducts();
 
-function myfunction() {
-  alert("Function to add");
-}
-function myfunction1() {
+const createProduct = (products) => {
+    const div = document.createElement("div");
+    div.classList.add("product-card");
+    productsContainer.append(div);
+
+    const productImg = document.createElement("img");
+    productImg.src = products.avatar
+    const productName = document.createElement("h1");
+    productName.innerHTML = products.name;
+    const productPrice = document.createElement("h1");
+    productPrice.innerHTML = products.price + " $";
+
+    //button additional info
+    const buttonSection = document.createElement("div");
+    buttonSection.classList.add("button-section");
+
+    const button = document.createElement("button");
+    button.classList.add("button");
+    button.innerHTML = "Buy"
+    button.style.width ='200px';
+    button.style.height ='50px';
+    button.style.backgroundColor = 'silver';
+
+    button.addEventListener("click", () => {
+        localStorage.setItem("destinationId", products.id);
+        window.location.replace("./index3.html");
+      });
+    
+    div.append(productName, productImg, productPrice, buttonSection)
+    buttonSection.append(button)
+};
+
+function homebutton() {
   location.href = ("./index.html");
+}
+
+function add() {
+  location.href = ("./index1.html");
 }
