@@ -41,3 +41,12 @@ const addProduct = (event) => {
 };
 
 submitForm.addEventListener("submit", addProduct);
+
+function homebutton() {
+    location.href = ("./index.html");
+  }
+  
+  function add() {
+    location.href = ("./index1.html");
+  }
+  
