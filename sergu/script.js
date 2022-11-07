@@ -32,6 +32,11 @@ const createProduct = (products) => {
     button.style.height ='50px';
     button.style.backgroundColor = 'silver';
 
+    button.addEventListener("click", () => {
+      localStorage.setItem("id", products.id);
+      window.location.replace("./index2.html");
+    });
+
     div.append(productName, productImg, productPrice, buttonSection)
     buttonSection.append(button)
 };
