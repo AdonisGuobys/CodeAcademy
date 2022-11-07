@@ -34,9 +34,6 @@ const createProduct = (products) => {
 
     button.addEventListener("click", () => {
       localStorage.setItem("id", products.id);
-      window.location.replace("./index2.html");
-    });
-
     div.append(productName, productImg, productPrice, buttonSection)
     buttonSection.append(button)
 };
