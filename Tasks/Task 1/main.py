@@ -19,6 +19,16 @@ users = [
   { "id": '9', "name": 'Daniel Cane', "age": 51, "hasDog": True },
 ]
 
-dog_owners = [user for user in users if user['hasDog']== True]
+def dog_owners():
+  dog_owner = [user for user in users if user['hasDog']== True]
+  print(dog_owner)
 
-adults = [adults for adults in users if adults['age'] >= 18]
+
+dog_owners()
+
+def adults():
+  adult = [adult for adult in users if adult['age'] >= 18]
+  print(adult)
+
+
+adults()
