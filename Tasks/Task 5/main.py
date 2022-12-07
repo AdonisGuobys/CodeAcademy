@@ -1,12 +1,14 @@
 # Importuokite reikiamus modulius, kad veiktų žemiau nurodytos funkcijos
-from folder1.folder2.python_file import python_file
-python_file()
-from folder1.folder2.python_file2 import python_file2
-python_file2()
+
+from modules.numbers.numbers import*
+from modules.math.composition import*
+from modules.math.division import*
+from modules.math.subtraction import*
+from modules.math.multiplication import*
 
 # Kitų failų ir žemiau esančio kodo nekeiskite
-a = addition(one, four);
-b = divivsion(four, two);
+a = composition(one, four);
+b = division(four, two);
 c = substraction(three, two);
 d = multiplication(five, two);
 
@@ -14,3 +16,4 @@ print(a);
 print(b);
 print(c);
 print(d);
+

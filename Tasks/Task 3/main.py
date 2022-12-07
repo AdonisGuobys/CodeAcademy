@@ -10,4 +10,9 @@ audi = {
   "color": 'white',
 }
 
-ka?
+def showObjectKeys():
+  x = audi.values()
+  print(x)
+
+
+showObjectKeys()
