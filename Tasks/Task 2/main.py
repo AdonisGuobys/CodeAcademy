@@ -19,3 +19,14 @@ users = [
   { "id": '8', "name": 'Simon Peterson', "age": 30 },
   { "id": '9', "name": 'Daniel Cane', "age": 51 },
 ]
+
+
+avg = [avg['age'] for avg in users if avg['age'] >= 0]
+
+Sum = sum(avg)
+avg_age = Sum/len(avg)
+print(avg_age)
+
+
+Names = [Names['name'] for Names in users] 
+print(Names)
