@@ -10,9 +10,5 @@
 # wasExpensive() - jeigu filmo "budget" yra daugiau nei 100 000 000 mln USD, tada grąžins True, kitu atveju False. 
 
 
-class = Movie:
-    title: string
-    director: string
-    budget: number
 
 
