@@ -1,0 +1,20 @@
+<body>
+  <h1>Join or Create a Group</h1>
+  <form method="post">
+    {{ form.csrf_token }}
+    <p>
+      {{ form.group_name.label }}<br>
+      {{ form.group_name }}<br>
+    </p>
+    <p>{{ form.submit() }}</p>
+  </form>
+  {% if groups %}
+    <h2>Groups:</h2>
+    <ul>
+    {% for group in groups %}
+      <li><a href="{{ url_for('group_detail', group_id=group.id) }}">{{ group.name }}</a></li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+  <p><a href="{{ url_for('index') }}">Home</a></p>
+</body>

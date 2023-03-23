@@ -1,0 +1,9 @@
+<form method="post">
+  {{ form.csrf_token }}
+  <label>Username:</label>
+  {{ form.username }}
+  <label>Password:</label>
+  {{ form.password }}
+  <button type="submit">Login</button>
+</form>
+<p><a href="{{ url_for('index') }}">Home</a></p>

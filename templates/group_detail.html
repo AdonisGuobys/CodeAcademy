@@ -1,0 +1,29 @@
+<body>
+  <h1>{{ group.name }}</h1>
+  <h1>Add Check</h1>
+  <form method="post">
+    {{ form.csrf_token }}
+    <p>
+      {{ form.name.label }}<br>
+      {{ form.name }}<br>
+    </p>
+    <p>
+      {{ form.amount.label }}<br>
+      {{ form.amount }}<br>
+    </p>
+    <p>{{ form.submit() }}</p>
+  </form>
+  <h2>Checks:</h2>
+  {% if checks %}
+    <ul>
+    {% for check in checks %}
+      <li>{{ check.name }} - {{ check.amount }}</li>
+    {% endfor %}
+    </ul>
+  {% else %}
+    <p>No checks found.</p>
+  {% endif %}
+  <p><a href="{{ url_for('group') }}">Back to Groups</a></p>
+  <p><a href="{{ url_for('index') }}">Home</a></p>
+</body>
+
