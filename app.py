@@ -2,6 +2,7 @@ from flask import Flask, render_template, session, redirect, url_for, request
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 from forms import RegistrationForm, LoginForm, CheckForm, GroupForm
+import bcrypt
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.db'
@@ -54,7 +55,9 @@ def register():
     if form.validate_on_submit():
         username = form.username.data
         password = form.password.data
-        user = User(username=username, password=password)
+        salt = bcrypt.gensalt()
+        hashed_password = bcrypt.hashpw(password.encode(), salt)
+        user = User(username=username, password=hashed_password.decode())
         db.session.add(user)
         db.session.commit()
         session['logged_in'] = True
@@ -68,7 +71,7 @@ def login():
         username = form.username.data
         password = form.password.data
         user = User.query.filter_by(username=username).first()
-        if user and user.password == password:
+        if user and bcrypt.checkpw(password.encode(), user.password.encode()):
             session['logged_in'] = True
             return redirect(url_for('index'))
     return render_template('login.html', form=form)
