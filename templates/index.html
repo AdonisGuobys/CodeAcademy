@@ -1,12 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <title>Title</title>
+</head>
 <body>
-    <h1>Adonio Guobio darbas</h1>
-    {% if not session.logged_in %}
-      <p><a href="{{ url_for('login') }}">Login</a></p>
-      <p><a href="{{ url_for('register') }}">Register</a></p>
-    {% else %}
-      <p><a href="{{ url_for('group') }}">Groups</a></p>
-      <!-- <p><a href="{{ url_for('bill') }}">All checks</a></p> -->
-      <p><a href="{{ url_for('logout') }}">Logout</a></p>
-    {% endif %}
-  </body>
+  <nav class="navbar">
+    <ul>
+      <li><a href="{{ url_for('index') }}"><img src="home.png" alt="Home" class="home-img"></a></li>
+      {% if not session.logged_in %}
+      <li><a href="{{ url_for('login') }}">Login</a></li>
+      <li><a href="{{ url_for('register') }}">Register</a></li>
+      {% else %}
+      <li><a href="{{ url_for('group') }}">Groups</a></li>
+      <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+      {% endif %}
+    </ul>
+  </nav>
+  <div class="container">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+  <footer>
+    <p> About us, Contact us, Avoid us, Dont press this</p>
+  </footer>
+</body>
 </html>
+
+ 

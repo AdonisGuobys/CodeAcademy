@@ -122,3 +122,6 @@ def group_detail(group_id):
         return redirect(url_for('group_detail', group_id=group_id))
     checks = Check.query.filter_by(group_id=group_id).order_by(Check.timestamp.desc()).all()
     return render_template('group_detail.html', group=group, form=form, checks=checks)
+
+if __name__ == '__main__':
+    app.run(debug=True)

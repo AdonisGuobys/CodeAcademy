@@ -1,3 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <title>Title</title>
+</head>
+<body>
+  <nav class="navbar">
+    <ul>
+        <li><a href="{{ url_for('index') }}"><img src="home.png" alt="Home" class="home-img"></a></li>
+      {% if not session.logged_in %}
+      <li><a href="{{ url_for('login') }}">Login</a></li>
+
+      {% else %}
+      <li><a href="{{ url_for('group') }}">Groups</a></li>
+      <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+      {% endif %}
+    </ul>
+  </nav>
+  <div class="container">
+
+
 <form method="post">
     {{ form.csrf_token }}
     <label>Username:</label>
@@ -8,4 +32,16 @@
     {{ form.confirm_password }}
     <button type="submit">Register</button>
 </form>
-<p><a href="{{ url_for('index') }}">Home</a></p>
+
+
+
+    
+
+  </div>
+  <footer>
+    <p> About us, Contact us, Avoid us, Dont press this</p>
+  </footer>
+</body>
+</html>
+
+ 

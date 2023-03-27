@@ -1,5 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <title>Title</title>
+</head>
 <body>
-  <h1>{{ group.name }}</h1>
+  <nav class="navbar">
+    <ul>
+      <li><a href="{{ url_for('index') }}"><img src="home.png" alt="Home" class="home-img"></a></li>
+      {% if not session.logged_in %}
+      <li><a href="{{ url_for('login') }}">Login</a></li>
+      <li><a href="{{ url_for('register') }}">Register</a></li>
+      {% else %}
+      <li><a href="{{ url_for('group') }}">Groups</a></li>
+      <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+      {% endif %}
+    </ul>
+  </nav>
+  <div class="container">
+    <h1 class="main-title">{{ group.name }}</h1>
+    <form method="post" class="form-container">
   <h1>Add Check</h1>
   <form method="post">
     {{ form.csrf_token }}
@@ -11,19 +33,22 @@
       {{ form.amount.label }}<br>
       {{ form.amount }}<br>
     </p>
-    <p>{{ form.submit() }}</p>
-  </form>
-  <h2>Checks:</h2>
-  {% if checks %}
-    <ul>
-    {% for check in checks %}
-      <li>{{ check.name }} - {{ check.amount }}</li>
-    {% endfor %}
-    </ul>
-  {% else %}
-    <p>No checks found.</p>
-  {% endif %}
-  <p><a href="{{ url_for('group') }}">Back to Groups</a></p>
-  <p><a href="{{ url_for('index') }}">Home</a></p>
+    <button type="submit">Post</button>
+    <br>
+    <h1>Checks:</h1>
+    {% if checks %}
+      <ul>
+      {% for check in checks %}
+        <li class="check">{{ check.name }} - {{ check.amount }}</li>
+      {% endfor %}
+      </ul>
+    {% else %}
+      <p>No checks found.</p>
+    {% endif %}
+    </form>
+  </div>
+  <footer>
+    <p> About us, Contact us, Avoid us, Dont press this</p>
+  </footer>
 </body>
-
+</html>
