@@ -65,7 +65,7 @@ p {
   min-height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .container button[type="submit"] {
@@ -82,10 +82,11 @@ p {
 
 a.group-link {
   display: inline-block;
-  background-image: linear-gradient(to left, rgba(148, 0, 211, 0.4), rgba(75, 0, 130, 0.4), rgba(0, 0, 255, 0.4), rgba(0, 255, 0, 0.4), rgba(255, 255, 0, 0.4), rgba(255, 127, 0, 0.4), rgba(255, 0, 0, 0.4));
-  backdrop-filter: blur(10px);
+  /* background-image: linear-gradient(to left, rgba(148, 0, 211, 0.4), rgba(75, 0, 130, 0.4), rgba(0, 0, 255, 0.4), rgba(0, 255, 0, 0.4), rgba(255, 255, 0, 0.4), rgba(255, 127, 0, 0.4), rgba(255, 0, 0, 0.4)); */
+  background-image: linear-gradient(to bottom right, rgb(76, 170, 252, 0.6), rgb(201, 119, 255, 0.6), rgb(182, 213, 107, 0.6), rgb(31, 183, 222, 0.6));
+  backdrop-filter: blur(50px);
   padding: 10px 20px;
-  border-radius: 25px;
+  border-radius: 15px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   color: black;
   font-weight: bold;
@@ -116,12 +117,13 @@ a.group-link:hover {
 
 .container .main-title {
   text-align: center;
+  margin-top: 5%;
   margin-bottom: 25px;
 }
 
 .container .form-container {
   width: 100%;
-  margin-bottom: 25%;
+  /* margin-bottom: 25%; */
   text-align: center;
 }
 
@@ -139,7 +141,7 @@ a.group-link:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 25%;
+  /* margin-bottom: 25%; */
 }
 
 .container label {
@@ -156,7 +158,6 @@ footer {
   color: #fff;
   text-align: center;
   padding: 1rem;
-  margin-top: 1rem;
   width: 100%;
 }
 
@@ -213,7 +214,7 @@ textarea:focus {
   .navbar ul {
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-around;
   }
 
   .navbar ul li {
@@ -223,5 +224,12 @@ textarea:focus {
   
   .navbar ul li:last-child {
     margin-bottom: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .about {
+    margin-left: 20%;
+    margin-right: 20%;
   }
 }
