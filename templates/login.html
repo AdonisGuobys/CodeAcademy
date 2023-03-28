@@ -9,7 +9,7 @@
 <body>
   <nav class="navbar">
     <ul>
-      <li><a href="{{ url_for('index') }}"><img src="home.png" alt="Home" class="home-img"></a></li>
+      <li><a href="{{ url_for('index') }}">Home</a></li>
       {% if not session.logged_in %}
       <li><a href="{{ url_for('register') }}">Register</a></li>
       {% else %}
@@ -18,31 +18,20 @@
       {% endif %}
     </ul>
   </nav>
-  <div class="container">
-
-
-<form method="post">
-  {{ form.csrf_token }}
-  <label>Username:</label>
-  {{ form.username }}
-  <label>Password:</label>
-  {{ form.password }}
-  <button type="submit">Login</button>
-</form>
-
-
-
-
-
-
-
-    
-
+  <div class="content-wrapper">
+    <div class="container">
+      <form method="post">
+        {{ form.csrf_token }}
+        <label>Username:</label>
+        {{ form.username }}
+        <label>Password:</label>
+        {{ form.password }}
+        <button type="submit">Login</button>
+      </form>
+    </div>
   </div>
   <footer>
     <p> About us, Contact us, Avoid us, Dont press this</p>
   </footer>
 </body>
 </html>
-
- 

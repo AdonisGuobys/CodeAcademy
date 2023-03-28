@@ -9,7 +9,7 @@
 <body>
   <nav class="navbar">
     <ul>
-      <li><a href="{{ url_for('index') }}"><img src="home.png" alt="Home" class="home-img"></a></li>
+      <li><a href="{{ url_for('index') }}">Home</a></li>
       {% if not session.logged_in %}
       <li><a href="{{ url_for('login') }}">Login</a></li>
       <li><a href="{{ url_for('register') }}">Register</a></li>
@@ -19,27 +19,29 @@
       {% endif %}
     </ul>
   </nav>
-  <div class="container">
-    <h1 class="main-title">Join or Create a Group</h1>
-    <form method="post" class="form-container">
-    {{ form.csrf_token }}
-    <p>
-      {{ form.group_name.label }}<br>
-      {{ form.group_name }}<br>
-    </p>
-    <button type="submit">Join or Create</button>
-    {% if groups %}
-      <h1>Groups:</h1>
-      <ul>
-      {% for group in groups %}
-        <li><a href="{{ url_for('group_detail', group_id=group.id) }}" class="group-link">{{group.name }}</a></li>
-        {% endfor %}
-        </ul>
+  <div class="content-wrapper">
+    <div class="container">
+      <h1 class="main-title">Join or Create a Group</h1>
+      <form method="post" class="form-container">
+        {{ form.csrf_token }}
+        <p>
+          {{ form.group_name.label }}<br>
+          {{ form.group_name }}<br>
+        </p>
+        <button type="submit">Join or Create</button>
+        {% if groups %}
+          <h3>Groups:</h3>
+          <ul>
+          {% for group in groups %}
+            <li><a href="{{ url_for('group_detail', group_id=group.id) }}" class="group-link">{{group.name }}</a></li>
+            {% endfor %}
+          </ul>
         {% endif %}
-          </form>
-        </div>
-          <footer>
-            <p> About us, Contact us, Avoid us, Dont press this</p>
-          </footer>
-        </body>
-        </html>
+      </form>
+    </div>
+  </div>
+  <footer>
+    <p> About us, Contact us, Avoid us, Dont press this</p>
+  </footer>
+</body>
+</html>

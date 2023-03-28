@@ -4,12 +4,18 @@
   box-sizing: border-box;
 }
 
-
 html, body {
   height: 100%;
   font-family: Arial, sans-serif;
   line-height: 1.6;
   background-image: linear-gradient(to top right, #add8e6, #98fb98);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content-wrapper {
+  flex-grow: 1;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -25,7 +31,7 @@ p {
 
 .navbar {
   background-image: linear-gradient(to bottom right, rgb(76, 170, 252), rgb(201, 119, 255));
-  backdrop-filter: blur(2px);
+  backdrop-filter: blur(10px);
   padding: 1.5rem;
 }
 
@@ -77,11 +83,12 @@ p {
 
 a.group-link {
   display: inline-block;
-  background-image: linear-gradient(to left, rgba(148, 0, 211, 0.6), rgba(75, 0, 130, 0.6), rgba(0, 0, 255, 0.6), rgba(0, 255, 0, 0.6), rgba(255, 255, 0, 0.6), rgba(255, 127, 0, 0.6), rgba(255, 0, 0, 0.6));
+  background-image: linear-gradient(to left, rgba(148, 0, 211, 0.4), rgba(75, 0, 130, 0.4), rgba(0, 0, 255, 0.4), rgba(0, 255, 0, 0.4), rgba(255, 255, 0, 0.4), rgba(255, 127, 0, 0.4), rgba(255, 0, 0, 0.4));
+  backdrop-filter: blur(10px);
   padding: 10px 20px;
   border-radius: 25px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  color: white;
+  color: black;
   font-weight: bold;
   margin:auto;
 }
@@ -140,6 +147,10 @@ a.group-link:hover {
   margin-top: 20px;
 }
 
+.about {
+  text-align: center;
+}
+
 /* Footer */
 footer {
   background-color: rgba(51, 51, 51);
@@ -174,6 +185,33 @@ footer {
   border-radius: 5px;
   padding: 5px;
   transition: background-color 0.3s, color 0.3s;
+}
+
+/* Input fields */
+input[type="text"],
+input[type='number'],
+input[type="email"],
+input[type="password"],
+textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  width: 100%;
+  max-width: 400px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input[type="text"]:focus,
+input[type='number']:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+textarea:focus {
+  border-color: #4CAF50;
+  box-shadow: 0 0 3px rgba(76, 175, 80, 0.4);
 }
 
 
