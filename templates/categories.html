@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}Categories{% endblock %}
+
+{% block content %}
+  <form action="{{ url_for('categories') }}" method="post">
+    {{ form.csrf_token }}
+    {{ form.name.label }}: {{ form.name(size=20) }}
+    {{ form.submit }}
+  </form>
+  <ul>
+    {% for category in categories %}
+      <li>
+        {{ category.name }}
+        <form method="get" action="{{ url_for('view_category_notes', category_id=category.id) }}">
+            <button type="submit">View Notes</button>
+          </form>  
+        <form action="{{ url_for('delete_category', category_id=category.id) }}" method="post" class="inline-form">
+          {{ form.csrf_token }}
+          <button type="submit">Delete Category</button>
+        </form>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}

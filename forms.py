@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, SubmitField, TextAreaField
+from wtforms import StringField, PasswordField, SubmitField, TextAreaField, SelectField
 from wtforms.validators import DataRequired, EqualTo, ValidationError, Length, Regexp
 from models import User
 
@@ -50,9 +50,11 @@ class NoteForm(FlaskForm):
         DataRequired(message="Content is required."),
         Length(max=5000, message="Title must be no more than 5000 characters long.")
         ])
-    category = StringField('Category', validators=[
-        Length(max=50, message="Category must be no more than 50 characters long.")
-    ])
+    category = SelectField('Category', coerce=int)
     submit = SubmitField('Save Note')
 
-
+class CategoryForm(FlaskForm):
+    name = StringField('Category Name', validators=[
+        DataRequired(message="Name is required."), Length(min=1, max=50)
+        ])
+    submit = SubmitField('Create Category')
