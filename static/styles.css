@@ -76,17 +76,14 @@ p {
   border-radius: 5px;
   cursor: pointer;
   margin-top: 10px;
-  margin-bottom: 55px;
-
+  margin-bottom: 5px;
 }
 
-a.group-link {
-  display: inline-block;
-  /* background-image: linear-gradient(to left, rgba(148, 0, 211, 0.4), rgba(75, 0, 130, 0.4), rgba(0, 0, 255, 0.4), rgba(0, 255, 0, 0.4), rgba(255, 255, 0, 0.4), rgba(255, 127, 0, 0.4), rgba(255, 0, 0, 0.4)); */
-  background-image: linear-gradient(to bottom right, rgb(76, 170, 252, 0.6), rgb(201, 119, 255, 0.6), rgb(182, 213, 107, 0.6), rgb(31, 183, 222, 0.6));
-  backdrop-filter: blur(50px);
-  padding: 10px 20px;
-  border-radius: 15px;
+.note {
+  align-items: center;
+  background-color: rgba(241, 241, 142, 0.6);
+  padding: 15px 30px;
+  border-radius: 25px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   color: black;
   font-weight: bold;
@@ -94,29 +91,19 @@ a.group-link {
   margin-bottom: 10px;
 }
 
-
-a.group-link:hover {
-  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
-  transform: translateY(-2px);
-}
-
-.check {
-  display: inline-block;
-  background-color: rgba(150, 150, 100, 0.6);
-  padding: 15px 30px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  color: black;
-  font-weight: bold;
-  margin:auto;
-}
-
-.check:hover {
+.note:hover {
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
   transform: translateY(-2px);
 }
 
 
 .container .main-title {
+  text-align: center;
+  margin-top: 5%;
+  margin-bottom: 25px;
+}
+
+.container .sub-title {
   text-align: center;
   margin-top: 5%;
   margin-bottom: 25px;

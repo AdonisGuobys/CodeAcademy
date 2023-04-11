@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <title>Title</title>
+</head>
+<body>
+  <nav class="navbar">
+    <ul>
+      <li><a href="{{ url_for('index') }}">Home</a></li>
+      {% if not session.logged_in %}
+      <li><a href="{{ url_for('login') }}">Login</a></li>
+      <li><a href="{{ url_for('register') }}">Register</a></li>
+      {% else %}
+      <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+      {% endif %}
+    </ul>
+  </nav>
+  <div class="content-wrapper">
+    <div class="container">
+      <h1 class="main-title">Create Note</h1>
+        <form method="post">
+          {{ form.csrf_token }}
+          <label>Title:</label>
+          {{ form.title }}
+          {% for error in form.title.errors %}
+            <p class="error-message">{{ error }}</p>
+          {% endfor %}
+          <label>Content:</label>
+          {{ form.content }}
+          {% for error in form.content.errors %}
+            <p class="error-message">{{ error }}</p>
+          {% endfor %}
+          <label>Category:</label>
+          {{ form.category }}
+          {% for error in form.category.errors %}
+            <p class="error-message">{{ error }}</p>
+          {% endfor %}
+          <button type="submit">{{ form.submit.label.text }}</button>
+        </form>
+        <h1 class="sub-title">Your Notes</h1>
+        <div class="notes-list">
+          {% for note in notes %}
+            <div class="note">
+              <p>Category: {{ note.category }}</p>
+              <p>Title: {{ note.title }}</p>
+              <p>Content: {{ note.content }}</p>
+              <form method="get" action="{{ url_for('edit_note', note_id=note.id) }}">
+                <button type="submit">Edit</button>
+              </form>      
+              <form method="post" action="{{ url_for('delete_note', note_id=note.id) }}">
+                {{ form.csrf_token }}
+                <button type="submit">Delete</button>
+              </form>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <p> About us, Contact us, Avoid us, Dont click here</p>
+  </footer>
+</body>
+</html>

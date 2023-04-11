@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, SubmitField
+from wtforms import StringField, PasswordField, SubmitField, TextAreaField
 from wtforms.validators import DataRequired, EqualTo, ValidationError, Length, Regexp
 from models import User
 
@@ -40,4 +40,10 @@ class LoginForm(FlaskForm):
         user = User.query.filter_by(username=self.username.data).first()
         if not user or not user.check_password(password.data):
             raise ValidationError('Username or password is incorrect. Please try again.')
+
+class NoteForm(FlaskForm):
+    title = StringField('Title', validators=[DataRequired()])
+    content = TextAreaField('Content', validators=[DataRequired()])
+    category = StringField('Category', validators=[Length(max=50)])
+    submit = SubmitField('Save Note')
 
