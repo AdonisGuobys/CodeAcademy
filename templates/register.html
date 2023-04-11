@@ -13,7 +13,6 @@
       {% if not session.logged_in %}
       <li><a href="{{ url_for('login') }}">Login</a></li>
       {% else %}
-      <li><a href="{{ url_for('group') }}">Groups</a></li>
       <li><a href="{{ url_for('logout') }}">Log Out</a></li>
       {% endif %}
     </ul>
@@ -25,10 +24,19 @@
         {{ form.csrf_token }}
         <label>Username:</label>
         {{ form.username }}
+        {% for error in form.username.errors %}
+          <span class="error">{{ error }}</span><br>
+        {% endfor %}
         <label>Password:</label>
         {{ form.password }}
+        {% for error in form.password.errors %}
+          <span class="error">{{ error }}</span><br>
+        {% endfor %}
         <label>Confirm Password:</label>
         {{ form.confirm_password }}
+        {% for error in form.confirm_password.errors %}
+          <span class="error">{{ error }}</span><br>
+        {% endfor %}
         <button type="submit">Register</button>
       </form>
     </div>

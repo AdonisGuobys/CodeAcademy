@@ -234,3 +234,14 @@ textarea:focus {
     margin-right: 20%;
   }
 }
+
+.error {
+  color: red;
+  font-size: 0.8em;
+  font-weight: bold;
+}
+.custom-error {
+  color: red;
+  font-size: 0.8em;
+  font-weight: bold;
+}
