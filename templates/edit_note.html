@@ -1,27 +1,8 @@
+{% extends "base.html" %}
 
+{% block title %}Edit Note{% endblock %}
 
-  <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-  <title>Title</title>
-</head>
-<body>
-  <nav class="navbar">
-    <ul>
-      <li><a href="{{ url_for('index') }}">Home</a></li>
-      {% if not session.logged_in %}
-      <li><a href="{{ url_for('login') }}">Login</a></li>
-      <li><a href="{{ url_for('register') }}">Register</a></li>
-      {% else %}
-      <li><a href="{{ url_for('notes') }}">Notes</a></li>
-      <li><a href="{{ url_for('logout') }}">Log Out</a></li>
-      {% endif %}
-    </ul>
-  </nav>
-  <div class="content-wrapper">
+{% block content %}
     <div class="container">
       <h1 class="main-title">Edit Note</h1>
         <form method="post">
@@ -44,11 +25,4 @@
           <button type="submit">{{ form.submit.label.text }}</button>
         </form>
         </div>
-      </div>
-    </div>
-  </div>
-  <footer>
-    <p> About us, Contact us, Avoid us, Dont click here</p>
-  </footer>
-</body>
-</html>
+{% endblock %}

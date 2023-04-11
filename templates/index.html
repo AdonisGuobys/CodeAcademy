@@ -1,38 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-  <title>Title</title>
-</head>
-<body>
-  <nav class="navbar">
-    <ul>
-      <li><a href="{{ url_for('index') }}">Home</a></li>
-      {% if not session.logged_in %}
-      <li><a href="{{ url_for('login') }}">Login</a></li>
-      <li><a href="{{ url_for('register') }}">Register</a></li>
-      {% else %}
-      <li><a href="{{ url_for('notes') }}">Notes</a></li>
-      <li><a href="{{ url_for('logout') }}">Log Out</a></li>
-      {% endif %}
-    </ul>
-  </nav>
-  <div class="content-wrapper">
-    <div class="container">
-      <h1 class="main-title">Note'rino</h1>
-      <div class="about">
-        <p>Do you find yourself constantly forgetting important notes or struggling to organize them in one place? Note'rino is here to help!</p>
-        <p>With Note'rino, you can easily log in, write, save, categorize, edit, and view all your notes in one convenient location. Whether you need to jot down a quick reminder, take notes during a meeting, or keep track of important information, Note'rino has got you covered.</p>
-        <p>Gone are the days of frantically searching for scraps of paper with notes scribbled on them. With Note'rino, all your notes are safely stored in one place, accessible from any device with an internet connection.</p>
-        <p>Plus, with our user-friendly interface, you can easily categorize your notes by topic, date, or any other custom category you choose. This makes it easy to find and reference your notes when you need them, without wasting precious time scrolling through a never-ending list of notes.</p>
-        <p>Whether you're a student, professional, or just someone who loves to stay organized, Note'rino is the perfect tool for you. Say goodbye to cluttered notes and hello to streamlined productivity with Note'rino!</p>
-      </div>
-    </div>
+{% extends "base.html" %}
+
+{% block title %}Note'rino{% endblock %}
+
+{% block content %}
+<div class="container">
+  <h1 class="main-title">Note'rino</h1>
+  <div class="about">
+    <p>Do you find yourself constantly forgetting important notes or struggling to organize them in one place? Note'rino is here to help!</p>
+    <p>With Note'rino, you can easily log in, write, save, categorize, edit, and view all your notes in one convenient location. Whether you need to jot down a quick reminder, take notes during a meeting, or keep track of important information, Note'rino has got you covered.</p>
+    <p>Gone are the days of frantically searching for scraps of paper with notes scribbled on them. With Note'rino, all your notes are safely stored in one place, accessible from any device with an internet connection.</p>
+    <p>Plus, with our user-friendly interface, you can easily categorize your notes by topic, date, or any other custom category you choose. This makes it easy to find and reference your notes when you need them, without wasting precious time scrolling through a never-ending list of notes.</p>
+    <p>Whether you're a student, professional, or just someone who loves to stay organized, Note'rino is the perfect tool for you. Say goodbye to cluttered notes and hello to streamlined productivity with Note'rino!</p>
   </div>
-  <footer>
-    <p> About us, Contact us, Avoid us, Dont click here</p>
-  </footer>
-</body>
-</html>
+</div>
+{% endblock %}
