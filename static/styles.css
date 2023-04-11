@@ -1,0 +1,236 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  position: relative;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-image: linear-gradient(to top right, #add8e6, #98fb98);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content-wrapper {
+  flex-grow: 1;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #333;
+  margin-bottom: 0.8rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+p {
+  margin-bottom: 0.8rem;
+}
+
+.navbar {
+  background-image: linear-gradient(to bottom right, rgb(76, 170, 252), rgb(201, 119, 255));
+  backdrop-filter: blur(10px);
+  padding: 1.5rem;
+}
+
+.navbar ul {
+  list-style-type: none;
+  display: flex;
+}
+
+.navbar ul li {
+  margin-right: 2rem;
+}
+
+.navbar ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+
+.home-img {
+  max-height: 100%;
+  max-width: 20%;
+}
+
+.container {
+  max-width: 80%;
+  margin: 0 auto;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.container button[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-bottom: 55px;
+
+}
+
+a.group-link {
+  display: inline-block;
+  /* background-image: linear-gradient(to left, rgba(148, 0, 211, 0.4), rgba(75, 0, 130, 0.4), rgba(0, 0, 255, 0.4), rgba(0, 255, 0, 0.4), rgba(255, 255, 0, 0.4), rgba(255, 127, 0, 0.4), rgba(255, 0, 0, 0.4)); */
+  background-image: linear-gradient(to bottom right, rgb(76, 170, 252, 0.6), rgb(201, 119, 255, 0.6), rgb(182, 213, 107, 0.6), rgb(31, 183, 222, 0.6));
+  backdrop-filter: blur(50px);
+  padding: 10px 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  color: black;
+  font-weight: bold;
+  margin:auto;
+  margin-bottom: 10px;
+}
+
+
+a.group-link:hover {
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+
+.check {
+  display: inline-block;
+  background-color: rgba(150, 150, 100, 0.6);
+  padding: 15px 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  color: black;
+  font-weight: bold;
+  margin:auto;
+}
+
+.check:hover {
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+
+
+.container .main-title {
+  text-align: center;
+  margin-top: 5%;
+  margin-bottom: 25px;
+}
+
+.container .form-container {
+  width: 100%;
+  /* margin-bottom: 25%; */
+  text-align: center;
+}
+
+.container ul {
+  text-align: center;
+  padding: 0;
+}
+
+.container ul li {
+  display: inline;
+  margin-right: 1rem;
+}
+
+.container form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* margin-bottom: 25%; */
+}
+
+.container label {
+  margin-top: 20px;
+}
+
+.about {
+  text-align: center;
+}
+
+footer {
+  background-color: rgba(51, 51, 51);
+  backdrop-filter: blur(10px);
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  width: 100%;
+}
+
+.footer p {
+  margin-bottom: 0.8rem;
+}
+
+.footer a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer a:hover {
+  color: #ffa500;
+}
+
+.navbar ul li a:hover {
+  color: #ffa500;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+input[type="text"],
+input[type='number'],
+input[type="email"],
+input[type="password"],
+textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  width: 100%;
+  max-width: 400px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input[type="text"]:focus,
+input[type='number']:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+textarea:focus {
+  border-color: #4CAF50;
+  box-shadow: 0 0 3px rgba(76, 175, 80, 0.4);
+}
+
+
+@media screen and (max-width: 768px) {
+  .navbar ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .navbar ul li {
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .navbar ul li:last-child {
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .about {
+    margin-left: 20%;
+    margin-right: 20%;
+  }
+}

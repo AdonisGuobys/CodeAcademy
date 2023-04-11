@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <title>Title</title>
+</head>
+<body>
+  <nav class="navbar">
+    <ul>
+      <li><a href="{{ url_for('index') }}">Home</a></li>
+      {% if not session.logged_in %}
+      <li><a href="{{ url_for('login') }}">Login</a></li>
+      <li><a href="{{ url_for('register') }}">Register</a></li>
+      {% else %}
+      <li><a href="{{ url_for('group') }}">Groups</a></li>
+      <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+      {% endif %}
+    </ul>
+  </nav>
+  <div class="content-wrapper">
+    <div class="container">
+      <h1 class="main-title">About Expense Splitter</h1>
+      <div class="about">
+        <p>Expense Splitter is a platform designed to help you and your friends effortlessly keep track of shared expenses during trips, events, or any other occasions.
+        <br> Have you ever returned from an evening with friends and realized that you bought a round of drinks out of turn? Or perhaps struggled to remember who paid for dinner or the hotel during a group vacation? Expense Splitter is here to save the day!</p>
+        <p>Our easy-to-use interface allows you to register, login, create or join groups to document and split expenses with friends, making the process of settling debts a breeze.
+        <br> Say goodbye to awkward conversations and manually calculating who owes whom. With Expense Splitter, you can keep your friendships intact and your finances organized.</p>
+        <p>Whether you're planning a weekend getaway, a dinner party, or just hanging out with friends, Expense Splitter ensures that everyone pays their fair share without any confusion or misunderstandings.
+        <br> Experience the convenience and peace of mind that comes with using Expense Splitter for all your group expenses.</p>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <p> About us, Contact us, Avoid us, Dont click here</p>
+  </footer>
+</body>
+</html>

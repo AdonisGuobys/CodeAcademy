@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <title>Title</title>
+</head>
+<body>
+  <nav class="navbar">
+    <ul>
+      <li><a href="{{ url_for('index') }}">Home</a></li>
+      {% if not session.logged_in %}
+      <li><a href="{{ url_for('login') }}">Login</a></li>
+      <li><a href="{{ url_for('register') }}">Register</a></li>
+      {% else %}
+      <li><a href="{{ url_for('group') }}">Groups</a></li>
+      <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+      {% endif %}
+    </ul>
+  </nav>
+  <div class="content-wrapper">
+    <div class="container">
+      <h1 class="main-title">Join or Create a Group</h1>
+      <form method="post" class="form-container">
+        {{ form.csrf_token }}
+        <p>
+          {{ form.group_name.label }}<br>
+          {{ form.group_name }}<br>
+        </p>
+        <button type="submit">Join or Create</button>
+        {% if groups %}
+          <h3>Groups:</h3>
+          <ul>
+          {% for group in groups %}
+            <li><a href="{{ url_for('group_detail', group_id=group.id) }}" class="group-link">{{group.name }}</a></li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </form>
+    </div>
+  </div>
+  <footer>
+    <p> About us, Contact us, Avoid us, Dont click here</p>
+  </footer>
+</body>
+</html>
