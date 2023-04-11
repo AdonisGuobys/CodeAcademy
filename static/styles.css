@@ -79,23 +79,33 @@ p {
   margin-bottom: 5px;
 }
 
-.note {
+.notes-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
+}
+
+.note {
   background-color: rgba(241, 241, 142, 0.6);
   padding: 15px 30px;
   border-radius: 25px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   color: black;
   font-weight: bold;
-  margin:auto;
-  margin-bottom: 10px;
+  margin: 0 10px;
+  margin-bottom: 25px;
+  display: inline-block;
+  min-width: 350px;
+  text-align: center;
+  word-wrap: break-word;
 }
 
 .note:hover {
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
   transform: translateY(-2px);
 }
-
 
 .container .main-title {
   text-align: center;

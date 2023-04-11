@@ -42,8 +42,17 @@ class LoginForm(FlaskForm):
             raise ValidationError('Username or password is incorrect. Please try again.')
 
 class NoteForm(FlaskForm):
-    title = StringField('Title', validators=[DataRequired()])
-    content = TextAreaField('Content', validators=[DataRequired()])
-    category = StringField('Category', validators=[Length(max=50)])
+    title = StringField('Title', validators=[
+        DataRequired(message="Title is required."),
+        Length(max=100, message="Title must be no more than 100 characters long.")
+    ])
+    content = TextAreaField('Content', validators=[
+        DataRequired(message="Content is required."),
+        Length(max=5000, message="Title must be no more than 5000 characters long.")
+        ])
+    category = StringField('Category', validators=[
+        Length(max=50, message="Category must be no more than 50 characters long.")
+    ])
     submit = SubmitField('Save Note')
+
 
