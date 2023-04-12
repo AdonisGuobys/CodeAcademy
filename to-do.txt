@@ -1,1 +1,14 @@
-add ability to add images to notes and limit them by image size, both pixel and megabites
+register    +
+login   +
+create Category +
+edit category   +
+delete the category +
+create a note   +
+    title   +
+    textarea    +
+    foto -
+    assign it to category   +
+edit note   +
+delete note +
+search for notes using their title  +
+filter by category  +

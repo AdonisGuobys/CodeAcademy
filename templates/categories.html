@@ -9,11 +9,10 @@
     {{ form.name.label.text }} {{ form.name}}
     <button type="submit">{{ form.submit.label.text }}</button>
   </form>
-  <ul>
+  <h1 class="sub-title">Your Categories</h1>
   <div class="notes-list">
     {% for category in categories %}
       <div class="note">
-        <li>
           {{ category.name }}
           <form method="get" action="{{ url_for('view_category_notes', category_id=category.id) }}">
               <button type="submit">View Notes</button>
@@ -22,9 +21,7 @@
             {{ form.csrf_token }}
             <button type="submit">Delete Category</button>
           </form>
-        </li>
       </div>
       {% endfor %}
     </div>
-  </ul>
 {% endblock %}
