@@ -128,16 +128,6 @@ width: 100%;
 text-align: center;
 }
 
-.container ul {
-text-align: center;
-padding: 0;
-}
-
-.container ul li {
-display: inline;
-margin-right: 1rem;
-}
-
 .container form {
 display: flex;
 flex-direction: column;
@@ -168,10 +158,6 @@ margin-bottom: 0.8rem;
 color: #fff;
 text-decoration: none;
 transition: color 0.3s;
-}
-
-.footer a:hover {
-color: #ffa500;
 }
 
 .navbar ul li a:hover {
