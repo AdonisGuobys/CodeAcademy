@@ -6,7 +6,7 @@
 
 html {
   height: 100%;
-  background-image: linear-gradient(to top right, #add8e6, #98fb98);
+  background-image: linear-gradient(to bottom left, #add8e6, #98fb98);
   background-attachment: fixed;
 }
 
@@ -36,7 +36,7 @@ p {
 }
 
 .navbar {
-  background-image: linear-gradient(to bottom right, rgb(76, 170, 252), rgb(201, 119, 255));
+  background-image: linear-gradient(to bottom right, rgba(76, 170, 252, 0.74), rgba(48, 167, 43, 0.582));
   backdrop-filter: blur(10px);
   padding: 1.5rem;
   display: flex;
@@ -83,6 +83,11 @@ p {
   margin-bottom: 5px;
 }
 
+.container button:hover {
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+
 .notes-list {
   display: flex;
   flex-direction: row;
@@ -92,9 +97,9 @@ p {
 }
 
 .note {
-  background-color: rgba(241, 241, 142, 0.6);
-  padding: 15px 30px;
-  border-radius: 25px;
+  background-color: rgba(235, 232, 99, 0.671);
+  padding: 10px 20px;
+  border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   color: black;
   font-weight: bold;
