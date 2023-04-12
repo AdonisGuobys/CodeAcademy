@@ -17,10 +17,12 @@
             <p class="error-message">{{ error }}</p>
           {% endfor %}
           <label>Category:</label>
-          {{ form.category }}
-          {% for error in form.category.errors %}
-            <p class="error-message">{{ error }}</p>
-          {% endfor %}
+          <div class="dropdown">
+            {{ form.category }}
+            {% for error in form.category.errors %}
+              <p class="error-message">{{ error }}</p>
+            {% endfor %}
+          </div>
           <button type="submit">{{ form.submit.label.text }}</button>
         </form>
 {% endblock %}

@@ -4,22 +4,28 @@
   box-sizing: border-box;
 }
 
-html, body {
+html {
+  height: 100%;
+  background-image: linear-gradient(to top right, #add8e6, #98fb98);
+  background-attachment: fixed;
+}
+
+body {
   position: relative;
   height: 100%;
   font-family: Arial, sans-serif;
   line-height: 1.6;
-  background-image: linear-gradient(to top right, #add8e6, #98fb98);
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
+
 .content-wrapper {
   flex-grow: 1;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2 {
   color: #333;
   margin-bottom: 0.8rem;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
@@ -42,12 +48,6 @@ p {
   list-style-type: none;
   display: flex;
   align-items: center;
-}
-
-.navbar form {
-  display: flex;
-  align-self: center;
-  margin-left: 1rem;
 }
 
 .navbar ul li {
@@ -120,69 +120,66 @@ p {
 .container .sub-title {
   text-align: center;
   margin-top: 5%;
-  margin-bottom: 25px;
+  margin-bottom: 25px
 }
 
 .container .form-container {
-  width: 100%;
-  /* margin-bottom: 25%; */
-  text-align: center;
+width: 100%;
+text-align: center;
 }
 
 .container ul {
-  text-align: center;
-  padding: 0;
+text-align: center;
+padding: 0;
 }
 
 .container ul li {
-  display: inline;
-  margin-right: 1rem;
+display: inline;
+margin-right: 1rem;
 }
 
 .container form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  /* margin-bottom: 25%; */
+display: flex;
+flex-direction: column;
+align-items: center;
 }
 
 .container label {
-  margin-top: 20px;
+margin-top: 20px;
 }
 
 .about {
-  text-align: center;
+text-align: center;
 }
 
 footer {
-  background-color: rgba(51, 51, 51);
-  backdrop-filter: blur(10px);
-  color: #fff;
-  text-align: center;
-  padding: 1rem;
-  width: 100%;
+background-color: rgba(51, 51, 51);
+color: #fff;
+text-align: center;
+padding: 1rem;
+width: 100%;
 }
 
 .footer p {
-  margin-bottom: 0.8rem;
+margin-bottom: 0.8rem;
 }
 
 .footer a {
-  color: #fff;
-  text-decoration: none;
-  transition: color 0.3s;
+color: #fff;
+text-decoration: none;
+transition: color 0.3s;
 }
 
 .footer a:hover {
-  color: #ffa500;
+color: #ffa500;
 }
 
 .navbar ul li a:hover {
-  color: #ffa500;
-  background-color: #fff;
-  border-radius: 5px;
-  padding: 5px;
-  transition: background-color 0.3s, color 0.3s;
+color: #ffa500;
+background-color: #fff;
+border-radius: 5px;
+padding: 5px;
+transition: background-color 0.3s, color 0.3s;
 }
 
 input[type="text"],
@@ -190,16 +187,16 @@ input[type='number'],
 input[type="email"],
 input[type="password"],
 textarea {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 1rem;
-  width: 100%;
-  max-width: 400px;
-  margin-top: 5px;
-  margin-bottom: 10px;
-  outline: none;
-  transition: border-color 0.3s, box-shadow 0.3s;
+padding: 10px;
+border: 1px solid #ccc;
+border-radius: 5px;
+font-size: 1rem;
+width: 100%;
+max-width: 400px;
+margin-top: 5px;
+margin-bottom: 10px;
+outline: none;
+transition: border-color 0.3s, box-shadow 0.3s;
 }
 
 input[type="text"]:focus,
@@ -207,42 +204,64 @@ input[type='number']:focus,
 input[type="email"]:focus,
 input[type="password"]:focus,
 textarea:focus {
-  border-color: #4CAF50;
-  box-shadow: 0 0 3px rgba(76, 175, 80, 0.4);
+border-color: #4CAF50;
+box-shadow: 0 0 3px rgba(76, 175, 80, 0.4);
 }
 
-
 @media screen and (max-width: 768px) {
-  .navbar ul {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-  }
+.navbar ul {
+flex-direction: row;
+flex-wrap: wrap;
+justify-content: space-around;
+}
 
-  .navbar ul li {
-    margin-right: 1rem;
-    margin-bottom: 1rem;
-  }
-  
-  .navbar ul li:last-child {
-    margin-bottom: 0;
-  }
+.navbar ul li {
+margin-right: 1rem;
+margin-bottom: 1rem;
+}
+
+.navbar ul li:last-child {
+margin-bottom: 0;
+}
 }
 
 @media (min-width: 768px) {
-  .about {
-    margin-left: 20%;
-    margin-right: 20%;
-  }
+.about {
+margin-left: 20%;
+margin-right: 20%;
+}
 }
 
 .error {
-  color: red;
-  font-size: 0.8em;
-  font-weight: bold;
+color: red;
+font-size: 0.8em;
+font-weight: bold;
 }
+
+/* Bitch ass error not getting styled */
 .custom-error {
-  color: red;
-  font-size: 0.8em;
-  font-weight: bold;
+color: red;
+font-size: 0.8em;
+font-weight: bold;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown select {
+  background-color: rgba(255, 255, 255, 0.7);
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 1rem;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  outline: white;
+}
+
+.dropdown select:hover {
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
 }
