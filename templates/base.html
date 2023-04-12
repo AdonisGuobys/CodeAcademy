@@ -18,6 +18,9 @@
       <li><a href="{{ url_for('categories') }}">Categories</a></li>
       <li><a href="{{ url_for('notes') }}">Notes</a></li>
       <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+      <form action="{{ url_for('search_notes') }}" method="get" class="search-form">
+        <input type="text" name="query" placeholder="Search by title" required>
+      </form>
       {% endif %}
     </ul>
   </nav>

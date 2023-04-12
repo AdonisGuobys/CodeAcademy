@@ -1,5 +1,1 @@
-add error messages and validations to notes forms
-add search function by title name
-add ability to add images to notes and limit them by image size, both pixel and megabite
-ive added the categories wrong, need to put them before the notes
-add filtering by categories
+add ability to add images to notes and limit them by image size, both pixel and megabites

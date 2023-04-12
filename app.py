@@ -1,4 +1,4 @@
-from flask import Flask, render_template, session, redirect, url_for
+from flask import Flask, render_template, session, redirect, url_for, request
 from forms import RegistrationForm, LoginForm, NoteForm, CategoryForm
 from models import User, db, Note, Category
 import bcrypt
@@ -88,6 +88,8 @@ def edit_note(note_id, category_id=None):
     if note.user_id != session['user_id']:
         return redirect(url_for('index'))
     form = NoteForm()
+    user_categories = Category.query.filter_by(user_id=session['user_id']).all()
+    form.category.choices = [(c.id, c.name) for c in user_categories]
     if form.validate_on_submit():
         note.title = form.title.data
         note.content = form.content.data
@@ -101,6 +103,7 @@ def edit_note(note_id, category_id=None):
     form.content.data = note.content
     form.category.data = note.category_id
     return render_template('edit_note.html', form=form)
+
 
 @app.route('/delete_note/<int:note_id>', methods=['POST'])
 def delete_note(note_id, category_id=None):
@@ -123,25 +126,6 @@ def view_category_notes(category_id):
     category_notes = Note.query.filter_by(category_id=category_id, user_id=session['user_id']).all()
     return render_template('category_notes.html', notes=category_notes, category_id=category_id)
 
-@app.route('/category/<int:category_id>/edit_note/<int:note_id>', methods=['GET', 'POST'])
-def edit_category_note(category_id, note_id):
-    if not session.get('logged_in'):
-        return redirect(url_for('login'))
-    note = Note.query.get_or_404(note_id)
-    if note.user_id != session['user_id']:
-        return redirect(url_for('index'))
-    form = NoteForm()
-    if form.validate_on_submit():
-        note.title = form.title.data
-        note.content = form.content.data
-        note.category_id = form.category.data
-        db.session.commit()
-        return redirect(url_for('view_category_notes', category_id=category_id))
-    form.title.data = note.title
-    form.content.data = note.content
-    form.category.data = note.category_id
-    return render_template('edit_note.html', form=form)
-
 @app.route('/delete_category/<int:category_id>', methods=['POST'])
 def delete_category(category_id):
     if not session.get('logged_in'):
@@ -149,24 +133,20 @@ def delete_category(category_id):
     category = Category.query.get_or_404(category_id)
     if category.user_id != session['user_id']:
         return redirect(url_for('index'))
-    # Delete all notes associated with the category
+    # All the notes in it
     Note.query.filter_by(category_id=category_id).delete()
-    # Delete the category
+    # The category
     db.session.delete(category)
     db.session.commit()
     return redirect(url_for('categories'))
 
-@app.route('/category/<int:category_id>/delete_note/<int:note_id>', methods=['POST'])
-def delete_category_note(category_id, note_id):
+@app.route('/search_notes', methods=['GET'])
+def search_notes():
     if not session.get('logged_in'):
         return redirect(url_for('login'))
-    note = Note.query.get_or_404(note_id)
-    if note.user_id != session['user_id']:
-        return redirect(url_for('index'))
-    db.session.delete(note)
-    db.session.commit()
-    return redirect(url_for('view_category_notes', category_id=category_id))
-
+    query = request.args.get('query')
+    notes = Note.query.filter(Note.user_id == session['user_id'], Note.title.like(f'%{query}%')).all()
+    return render_template('search_notes.html', notes=notes)
 
 if __name__ == '__main__':
     app.run(debug=True)
