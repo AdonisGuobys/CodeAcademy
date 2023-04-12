@@ -4,9 +4,9 @@
 
 {% block content %}
 
-{% for note in notes %}
-<h1 class="main-title">Notes in Category: {{ note.category.name }}</h1>
-{% endfor %}
+{% if notes %}
+  <h1 class="main-title">Notes in Category: {{ notes.0.category.name }}</h1>
+{% endif %}
     <div class="notes-list">
       {% for note in notes %}
         <div class="note">
