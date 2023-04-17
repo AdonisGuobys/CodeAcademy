@@ -69,3 +69,4 @@ class CategoryForm(FlaskForm):
         Length(min=1, max=50, message="Title must be noless than 1 and no more than 50 characters long.")
         ])
     submit = SubmitField('Create Category')
+    

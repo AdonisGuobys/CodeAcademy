@@ -36,3 +36,4 @@ class Category(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
     user = db.relationship('User', backref='categories')
     notes = db.relationship('Note', backref='category')
+    
