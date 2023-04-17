@@ -1,11 +1,7 @@
 from flask_sqlalchemy import SQLAlchemy
 import bcrypt
 
-
-
 db = SQLAlchemy()
-
-
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -19,6 +15,8 @@ class User(db.Model):
     def check_password(self, password):
         return bcrypt.checkpw(password.encode(), self.password.encode())
 
+
+
 class Note(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(100), nullable=False)
@@ -29,6 +27,8 @@ class Note(db.Model):
 
     def __repr__(self):
         return '<Note %r>' % self.title
+
+
 
 class Category(db.Model):
     id = db.Column(db.Integer, primary_key=True)

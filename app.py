@@ -7,20 +7,29 @@ import os
 import time
 
 
+
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.db'
 app.config['SECRET_KEY'] = 'your_secret_key_here'
 app.config['UPLOAD_FOLDER'] = "uploads"
 
+
+
 db.init_app(app)
+
+
 
 with app.app_context():
     db.create_all()
+
+
 
 def unique_filename(filename):
     basename, ext = os.path.splitext(filename)
     unique_name = f"{basename}_{int(time.time())}{ext}"
     return secure_filename(unique_name)
+
+
 
 @app.before_request
 def require_login():
@@ -28,14 +37,19 @@ def require_login():
     if request.endpoint in logged_routes and not session.get('logged_in'):
         return redirect(url_for('login'))
 
+
+
 @app.route('/')
 def index():
     return render_template('index.html')
+
+
 
 @app.route('/logout')
 def logout():
     session.clear()
     return redirect(url_for('index'))
+
 
 
 @app.route('/register', methods=['GET', 'POST'])

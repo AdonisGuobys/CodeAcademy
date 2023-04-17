@@ -4,6 +4,8 @@ from wtforms.validators import DataRequired, EqualTo, ValidationError, Length, R
 from models import User
 from flask_wtf.file import FileField, FileAllowed
 
+
+
 class RegistrationForm(FlaskForm):
     username = StringField('Username', validators=[
         DataRequired(),
@@ -25,6 +27,8 @@ class RegistrationForm(FlaskForm):
         if user:
             raise ValidationError('This username is already taken. Please choose a different one.')
 
+
+
 class LoginForm(FlaskForm):
     username = StringField('Username', validators=[
         DataRequired(message="Username is required."),
@@ -42,6 +46,8 @@ class LoginForm(FlaskForm):
         if not user or not user.check_password(password.data):
             raise ValidationError('Username or password is incorrect. Please try again.')
 
+
+
 class NoteForm(FlaskForm):
     title = StringField('Title', validators=[
         DataRequired(message="Title is required."),
@@ -54,6 +60,8 @@ class NoteForm(FlaskForm):
     category = SelectField('Category', coerce=int)
     image = FileField('Image (optional)', validators=[FileAllowed(['jpg', 'png', 'gif', 'jpeg'], 'Images only!'), Optional()])
     submit = SubmitField('Save Note')
+
+
 
 class CategoryForm(FlaskForm):
     name = StringField('Category Name', validators=[
