@@ -1,7 +1,8 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField, TextAreaField, SelectField
-from wtforms.validators import DataRequired, EqualTo, ValidationError, Length, Regexp
+from wtforms.validators import DataRequired, EqualTo, ValidationError, Length, Regexp, Optional
 from models import User
+from flask_wtf.file import FileField, FileAllowed
 
 class RegistrationForm(FlaskForm):
     username = StringField('Username', validators=[
@@ -51,6 +52,7 @@ class NoteForm(FlaskForm):
         Length(max=5000, message="Title must be no more than 5000 characters long.")
         ])
     category = SelectField('Category', coerce=int)
+    image = FileField('Image (optional)', validators=[FileAllowed(['jpg', 'png', 'gif', 'jpeg'], 'Images only!'), Optional()])
     submit = SubmitField('Save Note')
 
 class CategoryForm(FlaskForm):

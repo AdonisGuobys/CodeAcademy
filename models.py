@@ -1,7 +1,11 @@
 from flask_sqlalchemy import SQLAlchemy
 import bcrypt
 
+
+
 db = SQLAlchemy()
+
+
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -21,6 +25,7 @@ class Note(db.Model):
     content = db.Column(db.Text(5000), nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
     category_id = db.Column(db.Integer, db.ForeignKey('category.id'), nullable=True)
+    image_filename = db.Column(db.String(255), nullable=True)
 
     def __repr__(self):
         return '<Note %r>' % self.title
@@ -30,4 +35,4 @@ class Category(db.Model):
     name = db.Column(db.String(100), nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
     user = db.relationship('User', backref='categories')
-    notes = db.relationship('Note', backref='category', lazy=True)
+    notes = db.relationship('Note', backref='category')
